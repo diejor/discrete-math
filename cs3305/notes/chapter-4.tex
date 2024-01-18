@@ -1,35 +1,38 @@
-\chapter{Algorithms Ch}
+\chapter{Number Theory and Cryptography}
 
-\section{Algorithms}
+\section{Divisibility and Modular Arithmetic}
 
-\subsection{Problem Section (book)}
+\begin{definition}
+  Let $a$ and $b$ be integers with $a \neq 0$. We say that $a$ \textbf{divides} $b$ if there exists an integer $c$ such that $b = ac$. We write $a \mid b$ to denote that $a$ divides $b$.
+\end{definition}
 
-\begin{exercise}{49}
-    
-\end{exercise}
+\begin{theorem}
+    Let $a$, $b$, and $c$ be integers. 
+    \begin{enumerate}
+        \item If $a \mid b$ and $a \mid c$, then $a \mid (b + c)$.
+        \item If $a \mid b$, then $a \mid (bc)$ for all integers $c$.
+        \item If $a \mid b$ and $b \mid c$, then $a \mid c$.
+    \end{enumerate}
+\end{theorem}
 
-\begin{exercise}{51}
-    \begin{algorithmic}
-        \Function{binary\_insertion\_sort}{$(a_1, a_2, \ldots, a_n)$: list of numbers}
-            \State $left \gets 1$
-            \State $right \gets n$
-            \While {$left_idx < right_idx$}
-                \State $mid \gets \floor{\frac{left + right}{2}}$
-                \If {$a_{mid} < a_{mid + 1}$}
-                    \State $left_idx \gets mid$
-                \Else
-                    \State $right_idx \gets mid_idx$
-                \EndIf
-            \EndWhile
-            \State $insert\_idx \gets left_idx$
-            \State $insert\_val \gets a_{insert\_idx}$
-            \State $idx \gets insert\_idx - 1$
-            \While {$idx \ge 1$ and $a_{idx} > insert\_val$}
-                \State $a_{idx + 1} \gets a_{idx}$
-                \State $idx \gets idx - 1$
-            \EndWhile
-            \State $a_{idx + 1} \gets insert\_val$
-            \State \Return $(a_1, a_2, \ldots, a_n)$
-        \EndFunction
-    \end{algorithmic}
+\begin{corollary}
+    Let $a$, $b$, and $c$ be integers, where $a \neq 0$. If $a \mid b$ and $a \mid c$, then $a \mid (bx + cy)$ for all integers $x$ and $y$.
+\end{corollary}
+
+\begin{definition}
+    \textbf{The Division Algorithm.} Let $a$ and $d$ a positive integers. Then there exist unique integers $q$ and $r$ such that $a = dq + r$ and $0 \leq r < d$.
+\end{definition}
+
+\begin{definition}
+    In the equality given in the division algorithm, $d$ is called the \textbf{divisor}, $a$ is called the \textbf{dividend}, $q$ is called the \textbf{quotient}, and $r$ is called the \textbf{remainder}. This notation is used to express the quotient and remainder: 
+    \begin{equation*}
+        q = \frac{a}{d} \quad \text{and} \quad r = a \bmod d
+    \end{equation*}
+\end{definition}
+
+
+\subsection{exercises}
+
+\begin{exercise}[22]
+    Let $m$ be a positive integer. Show that $a \mod m = b \mod m$ if and only if \cmod{a}{b}{m}.
 \end{exercise}
